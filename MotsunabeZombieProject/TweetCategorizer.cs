@@ -7,9 +7,9 @@ namespace MotsunabeZombieProject
 {
     public class TweetCategorizer
     {
-        public object Categorize(string p)
+        public string Categorize(string tweet)
         {
-            if (p.Contains("#"))
+            if (tweet.Contains("#"))
             {
                 return "ContainHashTag";
             }
