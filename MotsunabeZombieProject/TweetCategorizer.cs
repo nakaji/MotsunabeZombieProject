@@ -9,6 +9,10 @@ namespace MotsunabeZombieProject
     {
         public object Categorize(string p)
         {
+            if (p.Contains("#"))
+            {
+                return "ContainHashTag";
+            }
             return "Normal";
         }
     }

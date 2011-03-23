@@ -15,5 +15,12 @@ namespace MotsunabeZombieProject.Test
             var ct = new TweetCategorizer();
             Assert.That(ct.Categorize("nakaji\tほげ"), Is.EqualTo("Normal"));
         }
+
+        [Test]
+        public void ハッシュタグを含むツイート()
+        {
+            var ct = new TweetCategorizer();
+            Assert.That(ct.Categorize("nakaji\tほげ #hoge"), Is.EqualTo("ContainHashTag"));
+        }
     }
 }
