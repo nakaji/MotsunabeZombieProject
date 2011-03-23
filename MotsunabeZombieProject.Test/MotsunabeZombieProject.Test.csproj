@@ -42,9 +42,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TweetCategorizerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="lib\nunit.framework.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MotsunabeZombieProject\MotsunabeZombieProject.csproj">
+      <Project>{4D84B6A3-7101-4D11-BBD4-2D7FFB18162B}</Project>
+      <Name>MotsunabeZombieProject</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
