@@ -11,18 +11,18 @@ namespace MotsunabeZombieProject.Test
     {
         private readonly TweetCategorizer ct = new TweetCategorizer();
 
-        [Test]
-        public void 通常のツイート()
+        [TestCase("nakaji\tほげ", "Normal")]
+        public void 通常のツイート(string body, string expectedCategory)
         {
-            string result = ct.Categorize("nakaji\tほげ");
-            Assert.That(result, Is.EqualTo("Normal"));
+            string result = ct.Categorize(body);
+            Assert.That(result, Is.EqualTo(expectedCategory));
         }
 
-        [Test]
-        public void ハッシュタグを含むツイート()
+        [TestCase("nakaji\tほげ #hoge", "ContainHashTag")]
+        public void ハッシュタグを含むツイート(string body, string expectedCategory)
         {
-            string result = ct.Categorize("nakaji\tほげ #hoge");
-            Assert.That(result, Is.EqualTo("ContainHashTag"));
+            string result = ct.Categorize(body);
+            Assert.That(result, Is.EqualTo(expectedCategory));
         }
 
         [TestCase("nakaji\t@piyo ほげ1", "Reply")]
