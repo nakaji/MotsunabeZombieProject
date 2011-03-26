@@ -19,6 +19,8 @@ namespace MotsunabeZombieProject.Test
         }
 
         [TestCase("nakaji\tほげ #hoge", "ContainHashTag")]
+        [TestCase("nakaji\tほげ #", "Normal")]
+        [TestCase("nakaji\tほげ # ぴよ", "Normal")]
         public void ハッシュタグを含むツイート(string body, string expectedCategory)
         {
             string result = ct.Categorize(body);

@@ -10,7 +10,7 @@ namespace MotsunabeZombieProject
     {
         public string Categorize(string tweet)
         {
-            if (tweet.Contains("#"))
+            if (Regex.IsMatch(tweet, "\t.+#[a-zA-Z0-9]"))
             {
                 return "ContainHashTag";
             }
