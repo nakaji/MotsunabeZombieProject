@@ -24,5 +24,14 @@ namespace MotsunabeZombieProject.Test
             string result = ct.Categorize("nakaji\tほげ #hoge");
             Assert.That(result, Is.EqualTo("ContainHashTag"));
         }
+
+        [TestCase("nakaji\t@piyo ほげ1", "Reply")]
+        [TestCase("nakaji\t.@piyo ほげ2", "Normal")]
+        [TestCase("nakaji\t@ piyo ほげ3", "Normal")]
+        public void リプライを含むツイート(string body, string expectedCategory)
+        {
+            string result = ct.Categorize(body);
+            Assert.That(result, Is.EqualTo(expectedCategory));
+        }
     }
 }
